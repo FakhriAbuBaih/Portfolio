@@ -1,0 +1,75 @@
+.allHome{
+    background-image: url('../../../public/Frame\ 1\ \(1\).png');
+    background-size: cover;
+    margin-top: 50px;
+    height: 110vh;
+}
+.Home{
+    display: flex;
+    flex-direction: column;
+    width:50%;
+    gap:4px;
+    justify-self: flex-start;
+    align-items: flex-start;
+    margin-right: auto;
+    padding:200px 20px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    font-style: italic;
+}
+.Home .buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:20px;
+    width: 60%;
+}
+.Home .buttons button{
+    padding: 7px 5px;
+    width: calc((100% - 20px)/2);
+    text-align: center;
+    font-style: italic;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.4);
+}
+.Home .buttons .projects{
+    background-color: var(--color1);
+    border:2px solid var(--color1);
+    color: #FFF;
+}
+.Home .buttons .contacts{
+    background-color: #FFF;
+    color: #FFF6DA;
+    border:2px solid #000;
+}
+.Home .buttons button a{
+    text-align: center;
+    width:100%;
+    font-weight: 500;
+    text-decoration: none;
+    text-shadow: 0px 2px 3px rgba(0,0,0,0.5);
+}
+.Home .buttons .projects a{
+    color: #FFF;
+    text-align: center;
+    width:100%;
+}
+.Home .buttons .contacts a{
+    color: #072B2C;
+    text-align: center;
+    width:100%;
+}
+.Home h3{
+    color:#FFF6DA;
+    font-weight: 500;
+    font-size: xxx-large;
+    font-family: "Kalam", cursive;
+}
+.Home h4{
+    color:#FFF;
+    font-weight: 400;
+    font-size: xx-large;
+}
+.Home p{
+    font-size: larger;
+    font-weight: 500;
+    width: 90%;
+}

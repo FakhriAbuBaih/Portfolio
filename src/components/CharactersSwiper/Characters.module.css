@@ -1,0 +1,11 @@
+.model{
+    display: flex;
+    align-items: center;
+    align-self: center;
+    flex-direction: column;
+    gap:10px;
+    position: relative;
+}
+.body{
+    height: 100%;
+}
