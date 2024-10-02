@@ -6,6 +6,7 @@ import style from './Characters.module.css'
 import Loader from '../Loader/Loader';
 
 export default function CharactersSwiper({ model, status }) {
+  const path =`public/Models/${model}/`;
   const divRef = useRef(null); // Reference to the div where the scene will be rendered
   const [loading, setLoading] = useState(true); // State to manage loader visibility
   const [setStatus] = useState('active');
@@ -88,7 +89,7 @@ export default function CharactersSwiper({ model, status }) {
 
 
     // Load 3D model
-    const loader = new GLTFLoader().setPath(`public/Models/${model}/`);
+    const loader = new GLTFLoader().setPath(path);
     loader.load(`${model}.glb`, (gltf) => {
       const mesh = gltf.scene;
 

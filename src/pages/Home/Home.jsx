@@ -4,7 +4,18 @@ import style1 from './About.module.css';
 import style2 from './Projects.module.css';
 import style3 from './Contacts.module.css';
 import { Link } from 'react-router-dom';
+import ProfilePic from '/public/profilepic.png'
+import blender from '/public/blender.svg'
+import figma from '/public/Figma.svg'
+import uiux from '/public/uiux.png'
+import d3 from '/public/d3art.png'
 
+import YT from '/public/YT.png'
+import LI from '/public/LI.svg'
+import GM from '/public/GM.png'
+import Insta from '/public/Insta.svg'
+import WA from '/public/WA.png'
+import QR from '/public/scan.png'
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
   const divRef = useRef(null);
@@ -47,7 +58,7 @@ export default function Home() {
       <div className={`${style1.About}`} id="About">
         <span>About Me</span>
         <div className={`container ${style1.aboutSec}`}>
-          <img src="/public/profilepic.png" className={`${style1.img}`} />
+          <img src={ProfilePic} className={`${style1.img}`} />
           <div className={`${style1.AboutMeText}`}>
             <h4>UI/UX Designer & 3D Artist</h4>
             <p className={`${style1.para}`}>I am Computer Systems Engineer with a strong foundation in both UI/UX design and 3D artistry.<br></br>My journey in digital creativity has led me to develop intuitive and user-centered interfaces in Figma while <br></br> also bringing characters and objects to life through 3D modeling in Blender.</p>
@@ -73,7 +84,7 @@ export default function Home() {
               </div>
               <div className={`${style1.info}`}>
                 <p>Programs: </p>
-                <p>Blender<img src='/public/blender.svg' />, Figma <img src='../../../public/Figma.svg' /></p>
+                <p>Blender<img src={blender} />, Figma <img src={figma} /></p>
               </div>
             </div>
           </div>
@@ -83,8 +94,8 @@ export default function Home() {
       <div className={`${style2.Projects}`} id="Projects">
         <h3>Projects</h3>
         <div className={`${style2.options}`}>
-          <Link to="/uiuxProjects"><img src="/public/uiux.png" /><span>UI/UX</span></Link>
-          <Link to="/Projects3d"><img src="/public/d3art.png" /><span>3D Art</span></Link>
+          <Link to="/uiuxProjects"><img src={uiux} /><span>UI/UX</span></Link>
+          <Link to="/Projects3d"><img src={d3} /><span>3D Art</span></Link>
         </div>
       </div>
 
@@ -93,7 +104,7 @@ export default function Home() {
           <h3>... Contact us on ...</h3>
           <div className={`${style3.contactsOptions}`}>
             <div className={`${style3.option}`}>
-              <img src="/public/YT.png" />
+              <img src={YT} />
               <div className={`${style3.spans}`}>
                 <span>YouTube</span>
                 <span>Fakhri AbuBaih</span>
@@ -101,7 +112,7 @@ export default function Home() {
               <a href="https://www.youtube.com/@FakhriAbubaih">View</a>
             </div>
             <div className={`${style3.option}`}>
-              <img src="/public/LI.svg" />
+              <img src={LI} />
               <div className={`${style3.spans}`}>
                 <span>LinkedIn</span>
                 <span>Fakhri AbuBaih</span>
@@ -109,7 +120,7 @@ export default function Home() {
               <a href="https://www.linkedin.com/in/fakhri-abubaih/">View</a>
             </div>
             <div className={`${style3.option}`}>
-              <img src="/public/GM.png" />
+              <img src={GM} />
               <div className={`${style3.spans}`}>
                 <span>Email</span>
                 <span>fakhribaih@gmail.com</span>
@@ -117,7 +128,7 @@ export default function Home() {
               <a href="mailto:fakhribaih@gmail.com">View</a>
             </div>
             <div className={`${style3.option}`}>
-              <img src="/public/Insta.svg" />
+              <img src={Insta} />
               <div className={`${style3.spans}`}>
                 <span>Instagram</span>
                 <span>fakhri3d</span>
@@ -125,7 +136,7 @@ export default function Home() {
               <a href="https://www.instagram.com/fakhri3d/">View</a>
             </div>
             <div className={`${style3.option}`}>
-              <img src="/public/WA.png" />
+              <img src={WA} />
               <div className={`${style3.spans}`}>
                 <span>Whats App</span>
                 <span>+970 599 468 002</span>
@@ -136,7 +147,7 @@ export default function Home() {
           {isVisible && (
               <div ref={divRef} id="whatsAppQRCode" className={`${style3.WWindow}`}>
                 <a href="#Contacts" onClick={toggleVisibility}>×</a>
-                <img src="/public/scan.png" alt="WhatsApp QR Code" />
+                <img src={QR} alt="WhatsApp QR Code" />
               </div>
           )}
 
