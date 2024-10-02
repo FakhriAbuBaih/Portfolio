@@ -2,14 +2,14 @@ import React, { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import style from './Characters.module.css'
+import style from './Characters.module.css';
 import Loader from '../Loader/Loader';
 
 export default function CharactersSwiper({ model, status }) {
-  const path =`public/Models/${model}/`;
+  const path = `/Models/${model}/`; // Corrected path
   const divRef = useRef(null); // Reference to the div where the scene will be rendered
   const [loading, setLoading] = useState(true); // State to manage loader visibility
-  const [setStatus] = useState('active');
+
   useEffect(() => {
     const divElement = divRef.current;
     const width = divElement.clientWidth;
@@ -33,6 +33,7 @@ export default function CharactersSwiper({ model, status }) {
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
+
     if (status === 'notactive') {
       camera.position.set(0, 20, 30);
       const spotLight = new THREE.SpotLight(0xffffff, 1000, 150, 0.7, 1);
@@ -86,8 +87,6 @@ export default function CharactersSwiper({ model, status }) {
     groundMesh.receiveShadow = true;
     scene.add(groundMesh);
 
-
-
     // Load 3D model
     const loader = new GLTFLoader().setPath(path);
     loader.load(`${model}.glb`, (gltf) => {
@@ -133,19 +132,25 @@ export default function CharactersSwiper({ model, status }) {
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      controls.dispose();  // Proper disposal of controls
+      renderer.dispose();  // Dispose renderer to avoid memory leaks
+      scene.clear();       // Clear the scene for memory management
       divElement.removeChild(renderer.domElement);
     };
   }, [status]);
 
+  const divHeight = status === 'active' ? '100%' : '80%';
+  const divWidth = status === 'active' ? '200%' : '100%';
+
   return (
-    <div className={`${style.model}`} style={{height:status=='active'?'100%':'80%'}}>
+    <div className={`${style.model}`} style={{ height: divHeight }}>
       {loading && (
         <Loader />
       )}
-      <div className={`${style.body}`} ref={divRef} style={{width: status=='active'?'200%':'100%'}}>
+      <div className={`${style.body}`} ref={divRef} style={{ width: divWidth }}>
         {/* This div will contain the WebGL scene */}
       </div>
       <h4>{model}</h4>
     </div>
   );
-} 
+}
