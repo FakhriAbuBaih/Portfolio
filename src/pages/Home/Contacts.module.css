@@ -6,7 +6,7 @@
     font-style: italic;
     height: 100vh;
     border-bottom: 6px solid var(--color5);
-    background-image: url('../../../public/contact.png');
+    background-image: url('/public/contact.png');
     background-size: cover;
     position: relative;
     width: 100%;

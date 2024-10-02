@@ -6,7 +6,7 @@
     font-style: italic;
     height: 110vh;
     border-bottom: 6px solid var(--color5);
-    background-image: url('../../../public/about.png');
+    background-image: url('/public/about.png');
     background-size: cover;
     position: relative;
 }

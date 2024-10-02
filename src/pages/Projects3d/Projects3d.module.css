@@ -5,7 +5,7 @@
     align-items: center;
     height: 120vh;
     border-bottom: 6px solid var(--color5);
-    background-image: url('../../../public/projects.png');
+    background-image: url('/public/projects.png');
     background-size: cover;
     position: relative;
     font-family: "Kalam", cursive;

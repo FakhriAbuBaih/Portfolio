@@ -7,7 +7,7 @@
     font-style: italic;
     height: 120vh;
     border-bottom: 6px solid var(--color5);
-    background-image: url('../../../public/projects.png');
+    background-image: url('/public/projects.png');
     background-size: cover;
     font-family: "Kalam", cursive;
     color: var(--color4);

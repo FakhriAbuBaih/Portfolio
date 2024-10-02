@@ -20,7 +20,7 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
-import CharactersSwiper from '../../../components/CharactersSwiper/CharactersSwiper'
+import CharactersSwiper from '/src/components/CharactersSwiper/CharactersSwiper'
 export default function Projects() {
     var directories = location.pathname.split("/");
     var lastDirecotry = directories[(directories.length - 1)];
