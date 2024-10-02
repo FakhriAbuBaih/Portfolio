@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import style from './main.module.css'
 import style1 from './images.module.css'
 import style2 from './main.module.css'
@@ -21,9 +21,41 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import CharactersSwiper from '/src/components/CharactersSwiper/CharactersSwiper'
+
 export default function Projects() {
     var directories = location.pathname.split("/");
     var lastDirecotry = directories[(directories.length - 1)];
+    const [models, setModels] = useState({
+        farmer: { component: null, isActive: false },
+        Neon: { component: null, isActive: false },
+        WariorWoman: { component: null, isActive: false },
+        Beast: { component: null, isActive: false },
+        Gojo: { component: null, isActive: false },
+      });
+    
+      useEffect(() => {
+        // Load all models when the component mounts
+        setModels({
+          farmer: { component: <CharactersSwiper model='farmer' status='active' />, isActive: true },
+          Neon: { component: <CharactersSwiper model='Neon' status='notactive' />, isActive: false },
+          WariorWoman: { component: <CharactersSwiper model='WariorWoman' status='notactive' />, isActive: false },
+          Beast: { component: <CharactersSwiper model='Beast' status='notactive' />, isActive: false },
+          Gojo: { component: <CharactersSwiper model='Gojo' status='notactive' />, isActive: false },
+        });
+      }, []);
+    
+      const handleSlideChange = (index) => {
+        setModels((prevModels) => {
+          const updatedModels = {};
+          Object.keys(prevModels).forEach((key, idx) => {
+            updatedModels[key] = {
+              ...prevModels[key],
+              isActive: idx === index, 
+            };
+          });
+          return updatedModels;
+        });
+      };
     return (
         <div className={`${style.main}`}>
             <div className={`${style.bar}`}>
@@ -111,48 +143,31 @@ export default function Projects() {
                                 slideShadows: false,
                             }}
                             className="mySwiper"
-
+                            onSlideChange={(swiper) => handleSlideChange(swiper.activeIndex)} 
                         >
                             <SwiperSlide>
-                                {({ isActive }) => (
-                                    <CharactersSwiper model='farmer' status={`${isActive ? 'active' : 'notactive'}`} />
-                                )}
+                                <CharactersSwiper model='farmer' status={models.farmer.isActive ? 'active' : 'notactive'} />
                             </SwiperSlide>
                             <SwiperSlide>
-                                {({ isActive }) => (
-                                    <CharactersSwiper model='Neon' status={`${isActive ? 'active' : 'notactive'}`} />
-
-                                )}
+                                <CharactersSwiper model='Neon' status={models.Neon.isActive ? 'active' : 'notactive'} />
                             </SwiperSlide>
-                            
                             <SwiperSlide>
-                                {({ isActive }) => (
-                                    <CharactersSwiper model='WariorWoman' status={`${isActive ? 'active' : 'notactive'}`} />
-                            )}
-                        </SwiperSlide>
-                        <SwiperSlide>
-                                {({ isActive }) => (
-                                    <CharactersSwiper model='Beast' status={`${isActive ? 'active' : 'notactive'}`} />
-                            )}
-                        </SwiperSlide>
-                        <SwiperSlide>
-                                {({ isActive }) => (
-                                    <CharactersSwiper model='Gojo' status={`${isActive ? 'active' : 'notactive'}`} />
-                            )}
-                        </SwiperSlide>
+                                <CharactersSwiper model='WariorWoman' status={models.WariorWoman.isActive ? 'active' : 'notactive'} />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <CharactersSwiper model='Beast' status={models.Beast.isActive ? 'active' : 'notactive'} />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <CharactersSwiper model='Gojo' status={models.Gojo.isActive ? 'active' : 'notactive'} />
+                            </SwiperSlide>
+                        </Swiper>
 
 
+                    </div> : location.pathname === "/Animations" ? <>
+                    </> : <>
+                    </>}
+            </div>
 
-
-
-                    </Swiper>
-
-
-                </div> : location.pathname === "/Animations" ? <>
-            </> : <>
-            </>}
-        </div>
-
-    </div >
-)
+        </div >
+    )
 }

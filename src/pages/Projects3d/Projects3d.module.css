@@ -68,6 +68,7 @@ h3{
 .options a:hover p{
     transition: 1s;
     top: 80%;
+    height: fit-content;
 }
 .options a img{
     height: 100%;

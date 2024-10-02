@@ -23,6 +23,9 @@ a{
   color:#0F4B4C;
   text-align: center;
 }
+a:hover{
+  transform: scale(1.1);
+}
 svg{
   width: 30px;
   fill:#0F4B4C;
