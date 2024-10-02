@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 150vh;
+    height: 200vh;
     border-bottom: 6px solid var(--color5);
     background-image: url('/public/models.png');
     background-size: cover;

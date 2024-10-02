@@ -4,6 +4,7 @@ import style1 from './About.module.css';
 import style2 from './Projects.module.css';
 import style3 from './Contacts.module.css';
 import { Link } from 'react-router-dom';
+
 import ProfilePic from '/public/profilepic.png'
 import blender from '/public/blender.svg'
 import figma from '/public/Figma.svg'
@@ -80,7 +81,7 @@ export default function Home() {
                 <p>fakhribaih@gmail.com</p>
               </div>
               <div className={`${style1.info}`}>
-                <a href='/public/FakhriAbubaih-Resume.pdf' download>Download CV</a>
+                <a href='/FakhriAbubaih-Resume.pdf' download>Download CV</a>
               </div>
               <div className={`${style1.info}`}>
                 <p>Programs: </p>
@@ -145,10 +146,10 @@ export default function Home() {
             </div>
           </div>
           {isVisible && (
-              <div ref={divRef} id="whatsAppQRCode" className={`${style3.WWindow}`}>
-                <a href="#Contacts" onClick={toggleVisibility}>×</a>
-                <img src={QR} alt="WhatsApp QR Code" />
-              </div>
+            <div ref={divRef} id="whatsAppQRCode" className={`${style3.WWindow}`}>
+              <a href="#Contacts" onClick={toggleVisibility}>×</a>
+              <img src={QR} alt="WhatsApp QR Code" />
+            </div>
           )}
 
         </div>
