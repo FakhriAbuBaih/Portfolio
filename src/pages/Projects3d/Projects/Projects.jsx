@@ -130,7 +130,7 @@ export default function Projects() {
 
                         <Swiper
                             modules={[EffectCoverflow, Navigation]}
-                            grabCursor={true}
+                            grabCursor={false}
                             centeredSlides={true}
                             spaceBetween={45}
                             slidesPerView={3}

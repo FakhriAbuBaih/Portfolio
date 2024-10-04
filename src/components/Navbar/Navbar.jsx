@@ -12,14 +12,15 @@ export default function Navbar() {
     const loggedIn = localStorage.getItem('name');
 
     return (
-        <div>
-            <nav>
-                <div className="container">
-                    <div className={`${style.nav}`}>
-                        <div className={`${style.logo}`}>Eng, Fakhri AbuBaih</div>
+        <div className={`${style.main}`}>
+            <nav className="navbar navbar-expand-lg navbar-light">
+                <div className={`${style.logo}`}>Eng, Fakhri AbuBaih</div>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon" />
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNav">
                         {location.pathname === "/" ?
-                            <ul>
-                                {/* Section navigation within the base page */}
+                            <ul className="navbar-nav">
                                 <li className="nav-item">
 
                                     <a className={`nav-link ${location.hash === "#Home" ? style.active : ""}`} href="#Home"><img src={home} /> Home</a>
@@ -38,8 +39,7 @@ export default function Navbar() {
                                 </li>
                             </ul>
                             :
-                            <ul>
-                                {/* Page-to-page navigation */}
+                            <ul className="navbar-nav">
                                 <li className="nav-item">
 
                                     <Link className={`nav-link ${location.pathname === "/Home" ? style.active : ""}`} to="/"><img src={home} />Home</Link>
@@ -58,9 +58,9 @@ export default function Navbar() {
                                 </li>
                             </ul>
                         }
-                    </div>
                 </div>
             </nav>
+
         </div>
     );
 }

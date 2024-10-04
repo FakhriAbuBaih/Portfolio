@@ -140,7 +140,7 @@ export default function CharactersSwiper({ model, status }) {
   }, [status]);
 
   const divHeight = status === 'active' ? '100%' : '80%';
-  const divWidth = status === 'active' ? '200%' : '100%';
+  const divWidth = status === 'active' ? '300%' : '100%';
 
   return (
     <div className={`${style.model}`} style={{ height: divHeight }}>

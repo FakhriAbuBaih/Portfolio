@@ -23,13 +23,12 @@ a{
   color:#0F4B4C;
   text-align: center;
 }
-a:hover{
-  transform: scale(1.1);
-}
+
 svg{
   width: 30px;
   fill:#0F4B4C;
 }
+
 .main {
   display: flex;
   flex-wrap: wrap;
@@ -60,8 +59,8 @@ button{
 }
 .swiper-slide{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
 .mySwiper .swiper-button-next,
@@ -76,19 +75,6 @@ button{
 }
 .mySwiper .swiper-button-prev {
   left: 30%;
-}
-
-
-.mySwiper .swiper-pagination-bullet {
-  background-color: #cfcfcf !important; 
-  width: 10px !important; 
-  height: 10px !important;
-  opacity: 0.7 !important; 
-}
-
-.mySwiper .swiper-pagination-bullet-active {
-  background-color: var(--color4) !important; 
-  opacity: 1 !important;
 }
 .swiperbutton{
   width:100%;
@@ -108,4 +94,22 @@ button{
   transform: scale(1.2);
   cursor: pointer;
   transition: 1s;
+}
+
+@media screen and (max-width:1000px) {
+  .mySwiper{
+    height: 50vh;
+    width: 100%;
+  }
+  .mySwiper .swiper-button-next{
+    right: 10%;
+  }
+  .mySwiper .swiper-button-prev {
+    left: 10%;
+  }
+  .swiper-slide{
+    background-color: transparent !important;
+  }
+  
+  
 }

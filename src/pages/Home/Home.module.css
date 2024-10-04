@@ -1,7 +1,6 @@
 .allHome{
     background-image: url('/public/MainBG.png');
     background-size: cover;
-    margin-top: 50px;
     height: 110vh;
 }
 .Home{
@@ -75,4 +74,24 @@
     font-size: larger;
     font-weight: 500;
     width: 90%;
+}
+.Home a:hover{
+    transform: scale(1.1);
+}
+@media screen and (max-width:1000px) {
+    .allHome{
+        background-image: url('/public/MainBG.png');
+        background-size: auto;
+        height: 80vh;
+    }
+    .Home{
+        display: flex;
+        flex-direction: column;
+        width:100%;
+        gap:4px;
+        padding:100px 20px;
+    }
+    .Home .buttons{
+        width: 100%;
+    }
 }

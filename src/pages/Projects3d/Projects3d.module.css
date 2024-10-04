@@ -80,3 +80,21 @@ h3{
 .options a:hover img{
     opacity: 1;
 }
+@media screen and (max-width:1000px) {
+    .options{
+        gap:20px;
+        padding: 0px;
+        flex-wrap: wrap;
+    }
+    .options a{
+        width: calc((100% - 20px)/2);
+        height:fit-content;
+        text-decoration: none;
+        color: var(--color4);
+        position: relative;
+
+    }
+    .options a p{
+        font-size: x-large;
+    }
+}

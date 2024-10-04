@@ -1,42 +1,63 @@
-.active{
+.active {
     font-weight: 900;
 }
-nav{
-    position: fixed;
-    top: 0;
-    z-index: 20;
+
+.main{
+    position: fixed !important;
+    top: 0 !important;
+    z-index: 20 !important;
     overflow: hidden;
     background-color: var(--color1);
     width: 100%;
-    box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
 }
-.nav{
+
+.nav {
     display: flex;
     align-items: center;
     color: #FFFFFF;
+    width: 100%;
     padding: 10px 0px;
 }
-.nav ul{
-    justify-self: flex-end;
-    margin-left: auto;
+
+.nav button{
+    justify-self: flex-end !important;
+    margin-left: auto !important;
+}
+.nav button span{
+    color: #FFFFFF !important;
+}
+
+nav .nav ul {
+    justify-self: flex-end !important;
+    margin-left: auto !important;
     padding: 0px;
     list-style-type: none;
+    color: #FFFFFF;
 }
-nav .logo{
+
+nav .logo {
     font-size: large;
     height: 100%;
     text-align: center;
+    color: #FFFFFF;
 }
-a:hover{
-    color:#FFFFFF;
+
+a:hover {
+    color: #FFFFFF;
 }
-nav ul li a{
+
+nav ul li a {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     text-align: center;
+    color: #FFFFFF !important;
 }
-nav ul li a img{
+
+nav ul li a img {
     width: 20px;
 }
+
+

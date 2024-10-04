@@ -1,4 +1,4 @@
-.About{
+.About {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,54 +10,61 @@
     background-size: cover;
     position: relative;
 }
-.About span{
+
+.About span {
     width: 100%;
-    top:50px;
+    top: 50px;
     position: absolute;
     position: sticky;
     z-index: 10;
     background-color: var(--color2);
     text-align: center;
     padding: 20px;
-    color:#FFF;
+    color: #FFF;
     font-weight: 700;
     font-size: xx-large;
     font-family: "Kalam", cursive;
 }
-.About .aboutSec{
+
+.About .aboutSec {
     display: flex;
     width: 100%;
     gap: 80px;
     justify-content: space-between;
     align-items: center;
     padding: 20px 20px 0px 10px;
-    
+
 }
-.About .img{
+
+.About .img {
     width: 33%;
     border-radius: 20px;
     border: 3px solid #000;
     background-color: #BAD4E0;
     box-shadow: 10px 10px 10px var(--color5);
 }
-.AboutMeText{
+
+.AboutMeText {
     padding: 80px 0px 0px 0px;
     display: flex;
     flex-direction: column;
 }
-.AboutMeText h4{
+
+.AboutMeText h4 {
     color: var(--color1);
     font-weight: 700;
     font-size: xxx-large;
-    text-shadow: 0px 3px 4px rgba(0,0,0,0.4);
+    text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.4);
     margin-bottom: 15px;
 }
-.AboutMeText .para{
+
+.AboutMeText .para {
     color: var(--color5);
     font-size: x-large;
     font-weight: 700;
 }
-.infoBox{
+
+.infoBox {
     border-top: 0.5px solid var(--color5);
     display: flex;
     width: 100%;
@@ -65,39 +72,105 @@
     padding: 20px 0px;
     text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
 }
-.info{
+
+.info {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    gap:10px;
+    gap: 10px;
     font-size: larger;
     width: calc(100% / 2);
 }
-.info p:first-child{
+
+.info p:first-child {
     color: var(--color1);
     font-weight: 700;
 }
-.info p:nth-child(2){
+
+.info p:nth-child(2) {
     color: var(--color5);
     font-weight: 400;
     font-size: large;
 }
-.info p img{
+
+.info p img {
     width: 30px;
     border: 0px;
     border-radius: 0px;
 }
-.AboutMeText a{
+
+.AboutMeText a {
     text-align: center;
     background-color: var(--color6);
     border: 1px solid var(--color6);
     border-radius: 30px;
     color: #FFF;
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.4);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
     font-style: italic;
     text-decoration: none;
-    text-shadow: 0px 2px 2px rgba(0,0,0,0.5);
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
     font-size: medium;
     padding: 11px 30px;
 
+}
+.AboutMeText a:hover{
+    transform: scale(1.1);
+}
+
+@media screen and (max-width:1000px) {
+    .About {
+        height: 120vh;
+    }
+
+    .aboutSec {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 5px !important;
+    }
+
+    .info {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
+        font-size: medium;
+    }
+
+    .AboutMeText .para {
+        color: var(--color5);
+        font-size: medium;
+        font-weight: 700;
+    }
+
+    .AboutMeText {
+        padding: 0px;
+    }
+
+    .About .img {
+        width: 50%;
+        justify-self: flex-end !important;
+        margin-left: auto !important;
+        top: 10px;
+        right: 10px;
+        position: absolute;
+    }
+
+    .AboutMeText h4 {
+        font-size: larger;
+    }
+
+    .About span {
+        top: 0px;
+        position: absolute;
+        left: 0;
+        width: 40%;
+
+    }
+
+    .AboutMeText a {
+        padding: 11px 30px;
+        height: fit-content;
+        position: absolute;
+        bottom: 15px;
+        right: 10px;
+    }
 }

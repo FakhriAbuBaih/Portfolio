@@ -9,3 +9,11 @@
 .body{
     height: 100%;
 }
+@media screen and (max-width:1000px) {
+    .model{
+        gap:5px;
+    }
+    .model h4{
+        font-size: medium;
+    }
+}

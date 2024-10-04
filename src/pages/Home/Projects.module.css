@@ -48,3 +48,27 @@
     opacity: 1;
     transition: 1s;
 }
+@media screen and (max-width:1000px) {
+    .Projects{
+        padding: 20px 0px;
+        height: fit-content;
+    }
+    .Projects .options{
+        width: 80%;
+        gap:10px;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .Projects .options a{
+        border-radius: 30px;
+        height: 30vh;
+        width: calc((100% - 20px) / 2);    
+    } 
+    .Projects .options a img{
+        border-radius: 30px;
+        height: 100%;   
+    } 
+    .Projects .options span{
+        font-size: xx-large;  
+    }
+}
